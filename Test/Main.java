@@ -71,10 +71,13 @@ public class Main {
 
         if (expression.codePointAt(j) >= 49 && expression.codePointAt(j) <= 57) {
             b = Character.digit(expression.charAt(j), 10);
-            if (b == 1 && Character.digit(expression.charAt(j+1), 10) == 0) {
-                b = 10;
-                j += 1;
+            if (expression.length()-1 > j){
+                if (b == 1 && Character.digit(expression.charAt(j+1), 10) == 0 ) {
+                    b = 10;
+                    j += 1;
+                }
             }
+
         }
 
         if (expression.length()-1 > j){
